@@ -11,11 +11,11 @@
 ## Dependencies
 - [python](https://www.python.org/downloads/)
 - [pip](https://pip.pypa.io/en/stable/installation/)
-- Flask, gunicorn and boto3
+- flask, gunicorn and boto3
   ```
   pip install --no-cache-dir -r requirements.txt
   ```
-- [Docker](https://docs.docker.com/engine/install/)
+- [docker](https://docs.docker.com/engine/install/)
 
 ## Steps
 1. Move to `app` directory and run the application
