@@ -2,8 +2,8 @@
 `instance-details` lets you easily create infrastructure on AWS and deploy an application that displays the information of all running EC2 instances.
 ## Project breakdown
 - Creating an application to return a list of all running EC2 instances in a region in an AWS account along with their corresponding IPs and Tags when called on the **/ec2** path
-- Building and pushing container image of application to registry
-- IaC(Infrastructure as Code) to automate deployment of infrastructure on AWS
+- Building and pushing container image of the application to the registry
+- IaC(Infrastructure as Code) to automate the deployment of infrastructure on AWS
 ## Tech stack:
 | | Technology | | Description |
 | ----------- | ----------- | ----------- | ----------- |
@@ -25,7 +25,7 @@
 ## Initial steps
 - Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 - Create AWS [credentials](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1&skipRegion=true#/security_credentials)
-- Configure above AWS credentials locally by inserting respective values
+- Configure the above AWS credentials locally by inserting respective values
   ```
   aws configure
   ```
@@ -37,17 +37,17 @@ Resources are segregated as per the services and their components. More details 
 ### Features
 - Modularized structure
 - Terraform backend state maintained in S3 bucket with versioning enabled
-- Isolation between the terraform tfstate files for the AWS resources for reducing impact
+- Isolation between the terraform tfstate files for the AWS resources for reducing the impact
 - Terraform tfvars used for passing variable values
 - Consistent structure and naming convention
 ### Backend configuration
 - Best for teams to store the Terraform state file remotely
-- Teams have access to latest copy of infrastructure always
+- Teams have access to the latest copy of infrastructure always
 - Supports state locking and consistency checking
-- Three things required: 
+- Three things are required: 
   - Terraform S3 backend resource
   - S3 bucket to store the state file
-  - DynamoDB table for state locking and and consistency checking
+  - DynamoDB table for state locking and consistency checking
   ```hcl
   terraform {
     backend "s3" {
@@ -60,7 +60,7 @@ Resources are segregated as per the services and their components. More details 
   }
   ```
 ### Terraform resources structure
-    ├── README.md                 // Description of the module and it's purpose
+    ├── README.md                 // Description of the module and its purpose
     ├── backend.tf                // To create terraform backend state configuration
     ├── data.tf                   // It contains the declarations for data sources
     ├── main.tf                   // The primary entrypoint for terraform resources
@@ -75,7 +75,7 @@ Resources are segregated as per the services and their components. More details 
 4. [EC2](https://github.com/AmanM13/instance-details/tree/main/terraform/ec2)
 5. [Route 53](https://github.com/AmanM13/instance-details/tree/main/terraform/route_53)
 ### Provisioning steps
-1. Headover to the path of the resource to be deployed 
+1. Head over to the path of the resource to be deployed 
 2. Run 
     ```
     terraform init
